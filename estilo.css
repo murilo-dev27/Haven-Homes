@@ -1,0 +1,904 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f5f2;
+    color: #263746;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    min-height: 92px;
+
+    padding: 12px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8e8e3;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 190px;
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav a {
+    position: relative;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #263746;
+
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #b28f43;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #d4af5a;
+
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.header-button {
+    padding: 13px 23px;
+
+    background: #10263a;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border-radius: 4px;
+
+    transition: 0.3s ease;
+}
+
+.header-button:hover {
+    background: #183b56;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 90px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 38, 58, 0.94),
+            rgba(16, 38, 58, 0.72),
+            rgba(16, 38, 58, 0.30)
+        ),
+        url("https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero-label,
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #d4af5a;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    color: #ffffff;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(48px, 6vw, 76px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.hero p {
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+    color: #e2e8ec;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.primary-button {
+    background: #d4af5a;
+    color: #10263a;
+}
+
+.primary-button:hover {
+    background: #e3c575;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits {
+    padding: 75px 7%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    background: #ffffff;
+}
+
+.benefit-card {
+    padding: 30px;
+
+    text-align: center;
+
+    border: 1px solid #e7e7e2;
+
+    transition: 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 30px rgba(16, 38, 58, 0.08);
+}
+
+.benefit-card img {
+    width: 44px;
+    height: 44px;
+
+    margin: 0 auto 20px;
+}
+
+.benefit-card h3 {
+    margin-bottom: 10px;
+
+    color: #10263a;
+
+    font-size: 17px;
+}
+
+.benefit-card p {
+    color: #78838b;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 100px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: #f5f5f2;
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+}
+
+.about-content {
+    max-width: 550px;
+}
+
+.about-content h2,
+.section-heading h2,
+.cta h2 {
+    margin-bottom: 22px;
+
+    color: #10263a;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(34px, 4vw, 48px);
+
+    line-height: 1.15;
+}
+
+.about-content p {
+    margin-bottom: 18px;
+
+    color: #697680;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.text-button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: #a98236;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.text-button:hover {
+    color: #10263a;
+}
+
+
+/* =========================
+   PROPERTIES
+========================= */
+
+.properties {
+    padding: 100px 7%;
+
+    background: #ffffff;
+}
+
+.section-heading {
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #78838b;
+
+    font-size: 15px;
+}
+
+.property-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.property-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e7e2;
+
+    transition: 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 20px 40px rgba(16, 38, 58, 0.12);
+}
+
+.property-image {
+    height: 245px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.05);
+}
+
+.property-tag {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    padding: 6px 10px;
+
+    background: #d4af5a;
+
+    color: #10263a;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.property-info {
+    padding: 25px;
+}
+
+.property-location {
+    color: #a98236;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.property-info h3 {
+    margin: 8px 0;
+
+    color: #10263a;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 23px;
+}
+
+.property-description {
+    margin-bottom: 20px;
+
+    color: #78838b;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.property-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eeeeea;
+}
+
+.property-bottom strong {
+    color: #10263a;
+
+    font-size: 18px;
+}
+
+.property-bottom a {
+    color: #a98236;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.property-bottom a:hover {
+    color: #10263a;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials {
+    padding: 100px 7%;
+
+    background: #f5f5f2;
+}
+
+.testimonial-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.testimonial-card {
+    padding: 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e7e2;
+}
+
+.testimonial-card p {
+    margin-bottom: 25px;
+
+    color: #53616b;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.testimonial-card strong {
+    display: block;
+
+    color: #10263a;
+
+    font-size: 14px;
+}
+
+.testimonial-card span {
+    color: #8a959c;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 100px 7%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(16, 38, 58, 0.94),
+            rgba(16, 38, 58, 0.94)
+        ),
+        url("https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg")
+        center / cover no-repeat;
+}
+
+.cta > div {
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.cta h2 {
+    color: #ffffff;
+}
+
+.cta p {
+    margin-bottom: 30px;
+
+    color: #c8d1d7;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 70px 7% 25px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 60px;
+
+    background: #10263a;
+
+    color: #ffffff;
+}
+
+.footer .logo img {
+    width: 180px;
+
+    margin-bottom: 18px;
+}
+
+.footer-brand p {
+    max-width: 280px;
+
+    color: #aebbc4;
+
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-links h3 {
+    margin-bottom: 8px;
+
+    color: #d4af5a;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.footer-links a,
+.footer-links span {
+    color: #c9d1d6;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #d4af5a;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p,
+.footer-bottom a {
+    color: #84929c;
+
+    font-size: 12px;
+}
+
+.footer-bottom a:hover {
+    color: #d4af5a;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 12px 5%;
+    }
+
+    .nav {
+        gap: 18px;
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        gap: 40px;
+    }
+
+    .property-grid,
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .logo img {
+        width: 170px;
+    }
+
+    .nav {
+        width: 100%;
+
+        order: 3;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px 18px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+
+    .header-button {
+        padding: 11px 17px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 600px;
+
+        padding: 70px 7%;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+
+    /* BENEFITS */
+
+    .benefits {
+        grid-template-columns: 1fr;
+
+        padding: 60px 7%;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        grid-template-columns: 1fr;
+
+        padding: 70px 7%;
+
+        gap: 40px;
+    }
+
+    .about-image img {
+        height: 350px;
+    }
+
+
+    /* PROPERTIES */
+
+    .properties {
+        padding: 70px 7%;
+    }
+
+    .property-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* TESTIMONIALS */
+
+    .testimonials {
+        padding: 70px 7%;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 75px 7%;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 60px 7% 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 420px) {
+
+    .hero {
+        padding: 60px 22px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .about,
+    .properties,
+    .testimonials {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .logo img {
+        width: 155px;
+    }
+
+    .portfolio-note {
+    margin-top: 8px;
+    color: #687781;
+    font-size: 11px;
+}
+}
